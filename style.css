@@ -1,0 +1,951 @@
+@font-face {
+    font-family: inter;
+    src: url(./media/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: inter-ladea;
+    src: url(./media/fonts/static/Inter-Light.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --letra-global: #ffffff;
+    --main-navbar: rgb(0, 0, 0);
+    --letra-navbar-before: #cecece;
+    --letra-navbar: #ffffff;
+    --main-body-bg: #1f1f1f;
+    --main-home: #1f1f1f;
+    --about-color-main: grey;
+    --news-color: #1d1d1d;
+    --sustaibability-bg: #166661;
+}
+
+
+body {
+    background-color: var(--main-body-bg);
+}
+
+
+
+#cookie-message {
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+#cookie-message p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #707070;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+#cookie-message a {
+    color: #fff;
+}
+
+
+/* Buttons */
+
+.hover-4 {
+    border: .25vw solid;
+    border-image: white;
+    -webkit-mask:
+        conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0) var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+        conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0 var(--_i, 200%)/var(--_i, 8px) 200% border-box no-repeat,
+        linear-gradient(#000 0 0) padding-box no-repeat;
+    transition: .3s, -webkit-mask-position .3s .3s;
+    padding: 3%;
+}
+
+.hover-4:hover {
+    --_i: 100%;
+    color: #00ff2a;
+    transition: .3s, -webkit-mask-size .3s .3s;
+}
+
+/*
+    Textos
+*/
+
+.lenguage-menu-item,
+.navbar-link,
+.text-logo,
+.text-home,
+.about-text,
+.text-one,
+.text-two,
+.text-news {
+    text-decoration: none;
+    color: var(--letra-navbar-before);
+    font-family: inter;
+    font-size: 1.2em;
+    font-weight: 250;
+    transition: all 0.7s ease-in-out;
+    text-align: center;
+}
+
+.navbar-link:hover {
+    color: var(--letra-navbar);
+}
+
+.text-logo {
+    font-size: 2.5em;
+    background-image: url();
+}
+
+.text_home {
+    font-size: 1.5em;
+}
+
+.about-text,
+.text-one,
+.text-two {
+    font-size: 1.5em;
+}
+
+.text-two {
+    width: 90%;
+    opacity: 0;
+    transition: .5s;
+}
+
+.title {
+    font-size: 1.8em;
+}
+
+.about-div-left:hover .text-one {
+    opacity: 0;
+}
+
+.second {
+    color: white;
+    font-size: 2em;
+    font-family: inter;
+}
+
+.text-news {
+    font-size: 1.5em;
+}
+
+.text-news:hover {
+    color: var(--letra-navbar);
+}
+
+
+/*Preubas*/
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.vid {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+/*Seccion menu navegacion principal */
+
+.over-menu {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+}
+
+.search-hamburguer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.search-check {
+    display: none;
+}
+
+.respmenu input:checked~.navbar-search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.respmenu input:checked~.search-hamburguer-label {
+    display: none;
+}
+
+.navbar-search {
+    display: none;
+}
+
+.navbar-search input[type="text"],
+.navbar-search button[type="submit"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+
+.navbar-search input[type="text"] {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.navbar-search button[type="submit"] {
+    border-radius: 0 0.25rem 0.25rem 0;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.navbar-container {
+    background-color: var(--main-navbar);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.navbar-logo {
+    width: 100%;
+    height: 15vh;
+    background-image: url(./media/rims/13.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar-links {
+    width: 73%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+}
+
+
+
+
+/*Seccion home o inicio*/
+
+.main-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.home-first {
+    background-color: var(--main-home);
+    width: 100%;
+    height: 22vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home-img {
+    background-image: url(./media/mustang.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 99%;
+    height: 50vh;
+    border-image: white;
+    -webkit-mask:
+        conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0) var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+        conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0 var(--_i, 200%)/var(--_i, 8px) 200% border-box no-repeat,
+        linear-gradient(#000 0 0) padding-box no-repeat;
+    transition: .3s, -webkit-mask-position .3s .3s;
+}
+
+.home-img:hover {
+    width: calc(100% - 2.2vw);
+    border: 1vw solid white;
+    --_i: 100%;
+    color: #00ff2a;
+    transition: .3s, -webkit-mask-size .3s .3s;
+}
+
+.home-last {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-home);
+    width: 100%;
+    height: 22vh;
+}
+
+
+/*Separadores*/
+.separator {
+    width: 100%;
+    height: 6vw;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator-link {
+    text-decoration: none;
+    color: black;
+    font-family: inter;
+    font-size: 1.2em;
+    font-weight: 400;
+    transition: all 0.7s ease-in-out;
+}
+
+/*Seccion about us*/
+
+.main-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-div-left {
+    background-color: var(--about-color-main);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 33.5vh;
+    transition: all 1.5s ease-in-out;
+}
+
+.about-div-left:hover .text-two {
+    opacity: 100;
+    text-align: center;
+    display: block;
+
+}
+
+.about-div-left:hover {
+    background-color: var(--sustaibability-bg);
+}
+
+
+
+.about-div-objectives {
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 33.5vh;
+    background-image: url(https://www.diariodenavarra.es/uploads/2023/01/31/63d8f3f47e2da.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.about-div-objectives:hover {
+    display: block;
+    opacity: 100;
+}
+
+.about-div-rigth {
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 33.5vh;
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/487/710/406/ford-gt40-backgrounds-1966-sports-car-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.about-div-rigth:hover {
+    display: block;
+    opacity: 100;
+}
+
+.about-div-future {
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 33.5vh;
+    background-image: url(https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/nasa_meatball_large.jpg?itok=s09crfPr);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.about-div-future:hover {
+    display: block;
+    opacity: 100;
+}
+
+
+/*Seccion Newspaper*/
+
+.first {
+    display: none;
+
+}
+
+.news-first {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: #5F5F5F;
+}
+
+
+
+
+/*Contenedores de grid*/
+/*Esto es una fumada*/
+
+.container {
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 5% 20% 20% 20% 20% 5%;
+    grid-template-rows: 15% 30% 30% 15%;
+    gap: 5% 2%;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . . . . ."
+        ". Noticia1 Noticia2 Noticia3 Noticia4 ."
+        ". Noticia5 Noticia6 Noticia7 Noticia8 ."
+        ". . . . . .";
+}
+
+.Noticia1 {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-area: Noticia1;
+    background-image: url(https://fuelcarmagazine.com/wp-content/uploads/2022/10/Mercedes-AMG-Clase-A.jpg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia1:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+
+}
+
+.Noticia1:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title1 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.Subtitle {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.Subtitle1 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.Noticia2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-area: Noticia2;
+    background-image: url(https://cdn.topgear.es/sites/navi.axelspringer.es/public/media/image/2022/12/pagani-huayra-r-circuito-spa-francorchamps-2904424.jpg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia2:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia2:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.Subtitle2 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.Title2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.Noticia3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "."
+        "Title3"
+        "Subtitle3";
+    grid-area: Noticia3;
+    background-image: url(https://www.diariodenavarra.es/uploads/2023/01/31/63d8f3f47e2da.jpeg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia3:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia3:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title3 {
+    grid-area: Title3;
+}
+
+.Subtitle3 {
+    grid-area: Subtitle3;
+}
+
+.Noticia4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "."
+        "Title4"
+        "Subtitle4";
+    grid-area: Noticia4;
+    transition: all 1s ease-in-out;
+    background-image: url(https://w0.peakpx.com/wallpaper/646/822/HD-wallpaper-2024-lamborghini-revuelto-coupe-hybrid-v12-car.jpg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia4:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia4:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title4 {
+    grid-area: Title4;
+}
+
+.Subtitle4 {
+    grid-area: Subtitle4;
+}
+
+.Noticia5 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "."
+        "Title5"
+        "Subtitle5";
+    grid-area: Noticia5;
+    background-image: url(https://scontent-mad2-1.xx.fbcdn.net/v/t31.18172-8/15385333_1367582299932513_6778156096752330958_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=973b4a&_nc_ohc=6ZiCEIRwwQAAX-5Qp4_&_nc_ht=scontent-mad2-1.xx&oh=00_AfBUlAWAzivOck53MsRGZOyCdhM-4HKQrfU23qPLSWbsGg&oe=6480CB54);
+    transition: all 1s ease-in-out;
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia5:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia5:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title5 {
+    grid-area: Title5;
+}
+
+.Subtitle5 {
+    grid-area: Subtitle5;
+}
+
+.Noticia6 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "."
+        "Title6"
+        "Subtitle6";
+    grid-area: Noticia6;
+    background-image: url(https://wallpaperaccess.com/full/1451252.jpg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia6:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia6:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title6 {
+    grid-area: Title6;
+}
+
+.Subtitle6 {
+    grid-area: Subtitle6;
+}
+
+.Noticia7 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "."
+        "Title7"
+        "Subtitle7";
+    grid-area: Noticia7;
+    background-image: url(https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/09/10/16312901607687.jpg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia7:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia7:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+.Title7 {
+    grid-area: Title7;
+}
+
+.Subtitle7 {
+    grid-area: Subtitle7;
+}
+
+.Noticia8 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "."
+        "Title8"
+        "Subtitle8";
+    grid-area: Noticia8;
+    background-image: url(https://www.hdcarwallpapers.com/walls/tesla_roadster_4k-HD.jpg);
+    background-size: 100% 24vh;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia8:hover .first {
+    display: flex;
+    color: rgb(230, 230, 230);
+    font-size: 1.4em;
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.Noticia8:hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+    border: 1vw solid white;
+}
+
+
+.Title8 {
+    grid-area: Title8;
+}
+
+.Subtitle8 {
+    grid-area: Subtitle8;
+}
+
+
+/*Sustainability section*/
+
+.main-sustainability {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    width: 100%;
+    height: 10vh;
+    background-color: var(--sustaibability-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.middle-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.middle-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    background-color: var(--sustaibability-bg);
+}
+
+.middle-photo {
+    width: 100%;
+    height: 90vh;
+    background-color: var(--sustaibability-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sustainability-title {
+    font-size: 2em;
+    font-family: inter-ladea;
+    font-style: italic;
+    text-decoration: underline;
+    color: var(--letra-global);
+}
+
+.sustainability-text {
+    font-size: 1.6em;
+    font-family: inter;
+    color: var(--letra-global);
+}
+
+.sust-photo {
+    aspect-ratio: 5/4;
+    width: 80%;
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-left,
+    .navbar-center,
+    .navbar-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-brand,
+    .navbar-link,
+    .navbar-search {
+        margin: 1rem 0;
+    }
+
+    .navbar-search input[type="text"],
+    .navbar-search button[type="submit"] {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    cursor: pointer;
+    color: #333;
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type="radio"]:checked+label {
+    background-color: #333;
+    color: #fff;
+}
+
+#content-1:checked~#content-2-div {
+    display: none;
+}
+
+#content-2:checked~#content-1-div {
+    display: none;
+} */
